@@ -43,19 +43,6 @@ The `main.ipynb` file is crucial and contains the code for data preprocessing, t
 
 ### Installation
 
-To run the code, you need to have the following libraries installed:
-
-- numpy
-- avalanche-lib
-- matplotlib
-- mlflow
-- scikit-learn
-- torch
-- torchvision
-- torchinfo
-- tqdm
-- opencv-python
-
 The python version used is 3.9.13. For reproducibility, create a virtual environment and install the required libraries using the following commands:
 
 ```bash
@@ -63,6 +50,17 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
+
+### ML Lifecycle Management
+
+The project uses MLflow for tracking the experiments. To start the MLflow server and get insights into the experiments (e.g., hyperparameters, metrics and artifacts), run the following command:
+
+```bash
+mlflow ui
+```
+
+Due to the size of the logged artifacts (models), only the best model is included in the repository. The `main.ipynb` is
+already set up to load the model for further inference and testing.
 
 ### Paper
 

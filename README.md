@@ -51,6 +51,14 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+In order to accelerate the training process on Apple silicon such as M1, please manually install the `pytorch` and `torchvision` libraries using the following commands:
+
+```bash
+pip install --pre torch torchvision --extra-index-url https://download.pytorch.org/whl/nightly/cpu
+```
+
+Only in that way, one can maek use of Metal acceleration on Apple silicon ([Metal Performance Shaders](https://developer.apple.com/metal/pytorch/)).
+
 ### ML Lifecycle Management
 
 The project uses MLflow for tracking the experiments. To start the MLflow server and get insights into the experiments (e.g., hyperparameters, metrics and artifacts), run the following command:

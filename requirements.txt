@@ -6,7 +6,10 @@ matplotlib-inline==0.1.7
 mlflow==2.12.2
 numpy==1.26.4
 opencv-python==4.9.0.80
+pandas==2.2.2
+pillow==10.3.0
 scikit-learn==1.4.2
+seaborn==0.13.2
 timm==0.9.16
 torch==2.2.2
 torchinfo==1.8.0

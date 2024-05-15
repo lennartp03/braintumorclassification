@@ -33,11 +33,11 @@ braintumorclassification/
 └── README.md
 ```
 
-Under `src/data` the training and testing data can be found. It is logically split up into the two folders: `train` and `test`. The data is divided into the four classes: `glioma`, `meningioma`, `notumor`, and `pituitary`. The `augmentation.py`file contains the custom class for center cropping the images by a given percentage. The `brain_dataset.py`file contains the custom class for creating a Dataset, the `data_handler.py`file includes the class for preparing the dataset for training and testing.
+Under `src/data` the training and testing data can be found. It is logically split up into the two folders: `train` and `test`. The data is divided into the four classes: `glioma`, `meningioma`, `notumor`, and `pituitary`. The `augmentation.py` file contains the custom class for center cropping the images by a given percentage. The `brain_dataset.py` file contains the custom class for creating a Dataset, the `data_handler.py` file includes the class for preparing the dataset for training and testing.
 
 Under `src/graphics` some images that are being used in the corresponding paper can be found.
 
-The `model.py`file contains the customized Vision Transformer model class. The `utils.py` file contains the utility functions for setting the seed and logging into MLflow.
+The `model.py` file contains the customized Vision Transformer model class. The `utils.py` file contains the utility functions for setting the seed and logging into MLflow.
 
 The `main.ipynb` file is crucial and contains the code for data preprocessing, training and testing the model.
 

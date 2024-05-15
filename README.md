@@ -1,4 +1,4 @@
-# Brain Tumor Classification
+# Brain Tumor Classification using a Vision Transformer
 
 This repository contains the code for the brain tumor classification using the MRI images. The dataset can be found and downloaded from the following link: [Brain Tumor MRI Dataset](https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset/data).
 

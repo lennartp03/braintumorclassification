@@ -39,7 +39,7 @@ Under `src/graphics` some images that are being used in the corresponding paper 
 
 The `model.py` file contains the customized Vision Transformer model class. The `utils.py` file contains the utility functions for setting the seed and logging into MLflow.
 
-The `main.ipynb` file is crucial and contains the code for data preprocessing, training and testing the model.
+The `main.ipynb` file is crucial and contains the code for data preprocessing, training and testing the model. All cells and files are well-documented and can be easily followed. The code for creating visualizations is only sparsely commented, as it is not crucial for the understanding of the project.
 
 ### Installation
 

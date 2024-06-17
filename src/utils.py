@@ -1,7 +1,7 @@
 import random
 import numpy as np
 import torch
-import mlflow
+import wandb
 
 def set_seeds(seed):
     '''
@@ -20,9 +20,9 @@ def set_seeds(seed):
     torch.backends.cudnn.benchmark = False
 
 
-def log_to_mlflow(model, train_acc, train_loss, val_acc, val_loss, ep, lr, batch_size):
+def log_to_wandb(model, train_acc, train_loss, val_acc, val_loss, ep, lr, batch_size):
     '''
-    Logging training parameters, metrics and model to MLflow.
+    Logging training parameters, metrics and model to W&B.
 
     Args:
     -----
@@ -44,17 +44,18 @@ def log_to_mlflow(model, train_acc, train_loss, val_acc, val_loss, ep, lr, batch
         Batch size
     '''
 
-    mlflow.log_params({'learning_rate': lr,
-                       'batch_size': batch_size})
+    # Log metrics
+    wandb.log({
+        'train_accuracy': train_acc,
+        'train_loss': train_loss,
+        'val_accuracy': val_acc,
+        'val_loss': val_loss,
+        'epoch': ep,
+        'learning_rate': lr,
+        'batch_size': batch_size
+    })
 
-    mlflow.log_metrics({'train_accuracy': train_acc,
-                        'train_loss': train_loss,
-                        'val_accuracy': val_acc,
-                        'val_loss': val_loss
-                    }, step=ep)
-    
-    mlflow.pytorch.log_model(
-        model,
-        'brain-tumor-vit-classifier',
-        registered_model_name=f'brain-tumor-model-{ep}-{lr}',
-    )
+    # Save the model
+    model_path = f'models/model_lr_{lr}_epoch_{ep}.pth'
+    torch.save(model.state_dict(), model_path)
+    wandb.save(model_path)

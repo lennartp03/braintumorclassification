@@ -30,9 +30,6 @@ braintumorclassification/
 │   ├── model.py
 │   └── utils.py
 │
-├── wandb/
-│   ├── ... (wandb files)
-│
 ├── .env
 ├── .gitignore
 ├── main.ipynb
@@ -48,9 +45,11 @@ Under `src/graphics` some images that are being used in the corresponding paper 
 
 The `src/model.py` file contains the customized Vision Transformer model class. The `src/utils.py` file contains the utility functions for setting the seed and logging into W&B.
 
-The `wandb` folder contains the W&B files for tracking the experiments. In the `.env` file, the W&B project details are stored but need to be adapted if the sweep is executed again. The vars are: `WANDB_PROJECT`, `WANDB_ENTITY`, `WANDB_RUN_IDS`.
-
 The `main.ipynb` file is crucial and contains the code for data preprocessing, training and testing the model. All cells and files are well-documented and can be easily followed. The code for creating visualizations is only sparsely commented, as it is not crucial for the understanding of the project.
+
+The `wandb` folder contains the W&B files for tracking the experiments. It is not part of the repository due to its size and personal information that might be included.
+
+In the `.env` file, the W&B project details are stored but need to be adapted if the sweep is executed again. The vars are: `WANDB_PROJECT`, `WANDB_ENTITY`, `WANDB_RUN_IDS`.
 
 ### Installation
 
@@ -68,7 +67,7 @@ In order to accelerate the training process on Apple silicon such as M1, please 
 pip install --pre torch torchvision --extra-index-url https://download.pytorch.org/whl/nightly/cpu
 ```
 
-Only in that way, one can maek use of Metal acceleration on Apple silicon ([Metal Performance Shaders](https://developer.apple.com/metal/pytorch/)).
+Only in that way, one can make use of Metal acceleration on Apple silicon ([Metal Performance Shaders](https://developer.apple.com/metal/pytorch/)).
 
 ### W&B Lifecycle Management
 

@@ -8,7 +8,7 @@ This repository contains the code for the brain tumor classification using the M
 braintumorclassification/
 │
 ├── models/
-│   └── model_lr_0.01_epoch_19.pth
+│   └── ... (model weight files)
 │
 ├── src/
 │   ├── data/

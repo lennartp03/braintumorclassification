@@ -37,7 +37,7 @@ braintumorclassification/
 └── requirements.txt
 ```
 
-The `models` folder contains the best performing model on the validation data - saved in the PyTorch format.
+The `models` folder should contain the best performing model on the validation data - saved in the PyTorch format. As the model is too large to be uploaded to the repository - even Git LFS did not work - the model training need to be repeated in order to obtain the model. **Therefore, the evaluation results are only reproducible by running the whole training process.**
 
 Under `src/data` the training and testing data can be found. It is logically split up into the two folders: `train` and `test`. The data is divided into the four classes: `glioma`, `meningioma`, `notumor`, and `pituitary`. The `augmentation.py` file contains the custom class for center cropping the images by a given percentage. The `brain_dataset.py` file contains the custom class for creating a Dataset, the `data_handler.py` file includes the class for preparing the dataset for training and testing.
 
